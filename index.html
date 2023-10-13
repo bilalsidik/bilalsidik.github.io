@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script defer src="face-api.min.js"></script>
+  <script defer src="script.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    canvas {
+      position: absolute;
+    }
+    .img-check{
+        position: absolute;
+      top: 5px;
+      left: 5px;
+    }
+  </style>
+</head>
+<body>
+  <video id="video" width="720" height="560" autoplay muted></video>
+  <div>
+    <img style="display: none;" height="100" class="img-check" id="myImg" alt="train1.jpg" src="train1.jpg" />
+    <span id="status" style="position: absolute; right: 80px; top: 10px;">Status Person</span>
+  </div>
+  <button onclick="captureImage()" style="position: absolute; bottom: 10px; left: 10px; padding: 5px; background: gray;">Capture </button>
+  <button onclick="startDetection()" style="position: absolute; bottom: 10px; left: 80px; padding: 5px; background: gray;">Star Detection </button>
+  <canvas id="forcapture" width="320" height="240"></canvas>
+</body>
+</html>
